@@ -1,6 +1,6 @@
 import argparse
 import hashlib
-import sha3 
+import sha3
 import json
 from zipfile import ZipFile
 import os
@@ -117,7 +117,7 @@ def verify_checksum(version: str) -> None:
 
         local_sha256_file_hash = f"0x{sha256_factory.hexdigest()}"
         local_keccak256_file_hash = f"0x{keccak_factory.hexdigest()}"
-    
+
     if sha256_hash != local_sha256_file_hash or keccak256_hash != local_keccak256_file_hash:
         raise argparse.ArgumentTypeError(
             f"Error: Checksum mismatch {soliditylang_platform()} - {version}"
@@ -140,11 +140,11 @@ def get_soliditylang_checksums(version: str) -> (str, str):
 
 def get_url(version: str = "", artifact: str = "") -> (str, str):
     if soliditylang_platform() == LINUX_AMD64:
-        if version != "" and is_older_linux(version):
-            return (
-                f"https://raw.githubusercontent.com/crytic/solc/master/linux/amd64/{artifact}",
-                "https://raw.githubusercontent.com/crytic/solc/new-list-json/linux/amd64/list.json",
-            )
+        # if version != "" and is_older_linux(version):
+        #     return (
+        #         f"https://raw.githubusercontent.com/crytic/solc/master/linux/amd64/{artifact}",
+        #         "https://raw.githubusercontent.com/crytic/solc/new-list-json/linux/amd64/list.json",
+        #     )
     return (
         f"https://binaries.soliditylang.org/{soliditylang_platform()}/{artifact}",
         f"https://binaries.soliditylang.org/{soliditylang_platform()}/list.json",
