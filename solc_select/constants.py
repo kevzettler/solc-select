@@ -19,4 +19,4 @@ LINUX_AMD64 = "linux-amd64"
 MACOSX_AMD64 = "macosx-amd64"
 WINDOWS_AMD64 = "windows-amd64"
 
-EARLIEST_RELEASE = {"macosx-amd64": "0.3.6", "linux-amd64": "0.4.0", "windows-amd64": "0.4.5"}
+EARLIEST_RELEASE = {"macosx-amd64": "0.3.6", "linux-amd64": "0.1.2", "windows-amd64": "0.4.5"}
