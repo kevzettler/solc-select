@@ -145,10 +145,10 @@ def get_url(version: str = "", artifact: str = "") -> (str, str):
         #         f"https://raw.githubusercontent.com/crytic/solc/master/linux/amd64/{artifact}",
         #         "https://raw.githubusercontent.com/crytic/solc/new-list-json/linux/amd64/list.json",
         #     )
-    return (
-        f"https://binaries.soliditylang.org/{soliditylang_platform()}/{artifact}",
-        f"https://binaries.soliditylang.org/{soliditylang_platform()}/list.json",
-    )
+        return (
+            f"https://binaries.soliditylang.org/{soliditylang_platform()}/{artifact}",
+            f"https://binaries.soliditylang.org/{soliditylang_platform()}/list.json",
+        )
 
 
 def switch_global_version(version: str, always_install: bool) -> None:
